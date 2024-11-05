@@ -6,7 +6,7 @@ import logging
 from pathlib import Path
 import pytest
 from unittest.mock import Mock, mock_open, call, sentinel
-from stingray import Row
+from stingray_reader import Row
 import demo.app
 
 

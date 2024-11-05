@@ -186,7 +186,7 @@ to the sheet named ``""``.
 
 The header row processing looks like this::
 
-    >>> from stingray import open_workbook, HeadingRowSchemaLoader, Row
+    >>> from stingray_reader import open_workbook, HeadingRowSchemaLoader, Row
     >>> from pathlib import Path
     >>> import os
     >>> from typing import Iterable
@@ -233,7 +233,7 @@ For an external schema, here are the two steps to processing the data:
 
 External schema processing look like this::
 
-    >>> from stingray import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
+    >>> from stingray_reader import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
     >>> from pathlib import Path
     >>> import os
     >>> from typing import Iterable
@@ -327,7 +327,7 @@ Then, the application can process data using the schema.
 
 COBOL processing looks like this::
 
-    >>> from stingray import schema_iter, COBOL_Text_File
+    >>> from stingray_reader import schema_iter, COBOL_Text_File
     >>> from pathlib import Path
     >>> import os
 
@@ -394,7 +394,7 @@ However, it seems simpler to use JSON Schema as a starting point,
 and build the internal structure from the JSON Schema document.
 
 
-    >>> from stingray import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
+    >>> from stingray_reader import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
     >>> from pathlib import Path
     >>> import os
     >>> from typing import Iterable

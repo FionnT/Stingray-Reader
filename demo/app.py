@@ -14,7 +14,7 @@ from collections import Counter
 from typing import TextIO, Any, Optional, Callable
 from types import TracebackType
 
-from stingray import Row, Sheet, Workbook, HeadingRowSchemaLoader, open_workbook
+from stingray_reader import Row, Sheet, Workbook, HeadingRowSchemaLoader, open_workbook
 
 logger = logging.getLogger(__name__)
 

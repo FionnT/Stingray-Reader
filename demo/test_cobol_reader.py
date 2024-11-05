@@ -4,7 +4,7 @@ Testing demo/cobol_reader.py
 
 import pytest
 from unittest.mock import Mock, MagicMock
-from stingray import Row
+from stingray_reader import Row
 import demo.cobol_reader
 
 

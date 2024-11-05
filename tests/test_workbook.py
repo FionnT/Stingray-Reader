@@ -8,8 +8,8 @@ from unittest.mock import call, sentinel
 
 import pytest
 
-from stingray.workbook import *
-from stingray.schema_instance import WBNav
+from stingray_reader.workbook import *
+from stingray_reader.schema_instance import WBNav
 
 ### Base Workbook/Sheet/Row Features
 

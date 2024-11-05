@@ -50,7 +50,7 @@ from typing import (
     cast,
 )
 import weakref
-from stingray.schema_instance import Unpacker, EBCDIC, SchemaMaker, NDInstance
+from stingray_reader.schema_instance import Unpacker, EBCDIC, SchemaMaker, NDInstance
 
 
 class DesignError(BaseException):

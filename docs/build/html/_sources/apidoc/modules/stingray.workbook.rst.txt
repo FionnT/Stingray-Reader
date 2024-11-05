@@ -101,7 +101,7 @@ Once a sheet has been bound to a schema, the rows can be processed.
 
 ::
 
-    >>> from stingray import open_workbook, HeadingRowSchemaLoader, Row
+    >>> from stingray_reader import open_workbook, HeadingRowSchemaLoader, Row
         >>> from pathlib import Path
         >>> import os
         >>> from typing import Iterable
@@ -158,7 +158,7 @@ by the :py:class:`HeadingRowSchemaLoader`.
 
 ::
 
-    >>> from stingray import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
+    >>> from stingray_reader import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
     >>> from pathlib import Path
     >>> import os
     >>> from typing import Iterable
@@ -355,7 +355,7 @@ The version 4.0 concept for the API looked like this:
 
 ::
 
-    from stingray.workbook import open_workbook, EmbeddedSchemaSheet, HeadingRowSchemaLoader
+    from stingray_reader.workbook import open_workbook, EmbeddedSchemaSheet, HeadingRowSchemaLoader
 
     with open_workbook(path) as workbook:
         sheet = EmbeddedSchemaSheet(workbook, 'Sheet1', HeadingRowSchemaLoader)
@@ -365,7 +365,7 @@ The version 4.0 concept for the API looked like this:
 
 ::
 
-    from stingray.workbook import open_workbook, ExternalSchemaSheet, ExternalSchemaLoader
+    from stingray_reader.workbook import open_workbook, ExternalSchemaSheet, ExternalSchemaLoader
 
     with open_workbook(path) as schema_wb:
         esl = ExternalSchemaLoader(schema_wb, sheet_name='Schema')

@@ -18,8 +18,8 @@ from pathlib import Path
 from typing import Optional, cast, Union, Any, IO, AnyStr
 import warnings
 
-from stingray.workbook import file_registry, Workbook
-from stingray.schema_instance import WBInstance, WBUnpacker
+from stingray_reader.workbook import file_registry, Workbook
+from stingray_reader.schema_instance import WBInstance, WBUnpacker
 
 try:
     import xlrd  # type: ignore [import]

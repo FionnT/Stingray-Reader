@@ -6,7 +6,7 @@ import logging
 from pathlib import Path
 import pytest
 from unittest.mock import Mock, sentinel
-from stingray import Row
+from stingray_reader import Row
 import demo.conversion
 
 

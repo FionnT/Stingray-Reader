@@ -72,7 +72,7 @@ from pprint import pformat
 import sys
 from typing import Any
 
-from stingray.workbook import (
+from stingray_reader.workbook import (
     COBOL_Text_File,
     schema_iter,
     SchemaMaker,

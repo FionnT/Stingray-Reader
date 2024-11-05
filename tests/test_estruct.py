@@ -5,7 +5,7 @@ estruct test cases.
 import pytest
 from decimal import Decimal
 from io import BytesIO
-from stingray.estruct import Representation, unpack, calcsize, RECFM_N, RECFM_F, RECFM_V, RECFM_VB
+from stingray_reader.estruct import Representation, unpack, calcsize, RECFM_N, RECFM_F, RECFM_V, RECFM_VB
 
 def test_display_text_1():
     rep = Representation.parse("USAGE DISPLAY PICTURE S9(5).99")
@@ -85,7 +85,7 @@ def test_display_text_11():
 def test_display_text_12():
     rep = Representation.parse("USAGE DISPLAY PICTURE $***9.99")
     assert rep == Representation(usage='DISPLAY', picture_elements=[{'char': '$'}, {'char': '*'}, {'char': '*'}, {'char': '*'}, {'digit': '9'}, {'decimal': '.'}, {'digit': '99'}], picture_size=8)
-    assert rep.pattern == '\$\*\*\*\d\.\d\d'
+    assert rep.pattern == r'\$\*\*\*\d\.\d\d'
     assert rep.digit_groups == ["", "9999", ".", "99"]
 
 def test_display_zoned_decimal():

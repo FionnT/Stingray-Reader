@@ -10,7 +10,7 @@ from textwrap import dedent
 import pytest
 
 
-from stingray.cobol_parser import *
+from stingray_reader.cobol_parser import *
 
 try:
     from jsonschema import Draft202012Validator as SchemaValidator  # type: ignore [import]
