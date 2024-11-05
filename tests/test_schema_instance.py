@@ -9,8 +9,8 @@ except ImportError:
     from jsonschema import Draft7Validator as SchemaValidator  # type: ignore[import]
 
 import pytest
-from stingray.schema_instance import *
-from stingray.workbook import JSONUnpacker
+from stingray_reader.schema_instance import *
+from stingray_reader.workbook import JSONUnpacker
 
 
 def test_conversions():

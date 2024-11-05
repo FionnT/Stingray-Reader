@@ -14,7 +14,7 @@ from stingray_reader import (
     CSV_Workbook, COBOL_Text_File,
     SchemaMaker, CONVERSION, name_cleaner
     )
-from stingray.implementations import (
+from stingray_reader.implementations import (
     XLS_Workbook, XLSX_Workbook, ODS_Workbook, Numbers_Workbook,
 )
 try:  # pragma: no cover
