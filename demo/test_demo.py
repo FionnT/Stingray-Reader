@@ -10,7 +10,7 @@ from collections import Counter
 from pathlib import Path
 import os
 from typing import Any
-from stingray import (
+from stingray_reader import (
     open_workbook,
     HeadingRowSchemaLoader,
     Workbook,

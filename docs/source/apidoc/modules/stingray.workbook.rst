@@ -101,7 +101,7 @@ Once a sheet has been bound to a schema, the rows can be processed.
 
 ::
 
-    >>> from stingray import open_workbook, HeadingRowSchemaLoader, Row
+    >>> from stingray_reader import open_workbook, HeadingRowSchemaLoader, Row
         >>> from pathlib import Path
         >>> import os
         >>> from typing import Iterable
@@ -158,7 +158,7 @@ by the :py:class:`HeadingRowSchemaLoader`.
 
 ::
 
-    >>> from stingray import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
+    >>> from stingray_reader import open_workbook, ExternalSchemaLoader, Row, SchemaMaker
     >>> from pathlib import Path
     >>> import os
     >>> from typing import Iterable

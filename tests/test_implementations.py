@@ -9,7 +9,7 @@ import datetime
 import pytest
 from pathlib import Path
 import os
-from stingray import (
+from stingray_reader import (
     HeadingRowSchemaLoader,
     CSV_Workbook, COBOL_Text_File,
     SchemaMaker, CONVERSION, name_cleaner

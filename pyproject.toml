@@ -1,5 +1,5 @@
 [project]
-name = "stingray-reader"
+name = "stingray_reader"
 version = "5.1.1"
 description = "The Stingray Schema-Based File Reader"
 readme = "README.rst"

@@ -24,7 +24,7 @@ import sys
 from typing import Any, Optional
 from types import TracebackType
 
-from stingray.workbook import (
+from stingray_reader.workbook import (
     open_workbook,
     HeadingRowSchemaLoader,
     Workbook,

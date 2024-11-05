@@ -65,9 +65,9 @@ from typing import (
 )
 import weakref
 
-import stingray
-import stingray.estruct
-from stingray.schema_instance import (
+import stingray_reader
+import stingray_reader.estruct
+from stingray_reader.schema_instance import (
     Instance,
     DInstance,
     WBInstance,
@@ -86,7 +86,7 @@ from stingray.schema_instance import (
     Mode,
     LocationMaker,
 )
-from stingray.cobol_parser import schema_iter
+from stingray_reader.cobol_parser import schema_iter
 
 try:  # pragma: no cover
     from jsonschema import Draft202012Validator as SchemaValidator  # noqa: F401
@@ -864,7 +864,7 @@ class COBOL_EBCDIC_File(Workbook[NDInstance]):
         self,
         name: Union[str, Path],
         file_object: Optional[IO[AnyStr]] = None,
-        recfm_class: Optional[Type["stingray.estruct.RECFM_Reader"]] = None,
+        recfm_class: Optional[Type["stingray_reader.estruct.RECFM_Reader"]] = None,
         lrecl: Optional[int] = None,
         **kwargs: str,
     ) -> None:
@@ -880,7 +880,7 @@ class COBOL_EBCDIC_File(Workbook[NDInstance]):
         :param kwargs: Additional KW args (not used.)
         """
         super().__init__(name)
-        self.recfm_class = recfm_class or stingray.estruct.RECFM_N
+        self.recfm_class = recfm_class or stingray_reader.estruct.RECFM_N
         self.lrecl: Optional[int] = lrecl
         self.unpacker = EBCDIC()
         self.unpacker.open(self.name, file_object)

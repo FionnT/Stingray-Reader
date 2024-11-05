@@ -24,8 +24,8 @@ import os
 from pathlib import Path
 from pprint import pprint
 import sys
-from stingray.workbook import open_workbook, HeadingRowSchemaLoader, Sheet, Row
-from stingray.schema_instance import JSON
+from stingray_reader.workbook import open_workbook, HeadingRowSchemaLoader, Sheet, Row
+from stingray_reader.schema_instance import JSON
 from typing import TextIO, Any
 from jsonschema import Draft202012Validator  # type: ignore [import]
 

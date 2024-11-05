@@ -38,7 +38,7 @@ This can be applied to a DDE to compute the offsets and positions of each field.
 
 Examples::
 
-    >>> import stingray.estruct
+    >>> import stingray_reader.estruct
     >>> stingray.estruct.unpack("USAGE DISPLAY PIC S999V99", ' 12345'.encode("cp037"))
     (Decimal('123.45'),)
     >>> stingray.estruct.unpack("USAGE DISPLAY PIC X(5)", 'ABCDE'.encode("cp037"))

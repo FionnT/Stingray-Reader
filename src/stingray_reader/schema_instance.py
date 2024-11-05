@@ -62,8 +62,8 @@ from typing import (
 )
 from weakref import ReferenceType, ref
 
-import stingray
-import stingray.estruct
+import stingray_reader
+import stingray_reader.estruct
 
 logger = logging.getLogger("stingray.schema_instance")
 
@@ -832,7 +832,7 @@ class EBCDIC(Unpacker[NDInstance]):
         """
         # assert schema.attributes.get("contentEncoding") in {"packed-decimal", "cp037"}
         format = cast(dict[str, Any], schema.attributes).get("cobol", "USAGE DISPLAY")
-        return stingray.estruct.calcsize(format)
+        return stingray_reader.estruct.calcsize(format)
 
     def value(self, schema: Schema, instance: NDInstance) -> Any:
         """
@@ -847,7 +847,7 @@ class EBCDIC(Unpacker[NDInstance]):
         conversion_func = CONVERSION[
             cast(dict[str, Any], schema.attributes).get("conversion")
         ]
-        (v,) = stingray.estruct.unpack(format, cast(bytes, instance))
+        (v,) = stingray_reader.estruct.unpack(format, cast(bytes, instance))
         return conversion_func(v)
 
     def nav(self, schema: Schema, instance: NDInstance) -> "NDNav":
@@ -892,7 +892,7 @@ class EBCDIC(Unpacker[NDInstance]):
     def instance_iter(
         self,
         sheet: str,
-        recfm_class: Type["stingray.estruct.RECFM_Reader"],
+        recfm_class: Type["stingray_reader.estruct.RECFM_Reader"],
         lrecl: int,
         **kwargs: Any,
     ) -> Iterator[NDInstance]:
@@ -937,7 +937,7 @@ class Struct(Unpacker[NDInstance]):
         :return: str format for :py:mod:`struct`
         """
         format = cast(dict[str, Any], schema.attributes).get("cobol", "USAGE DISPLAY")
-        representation = stingray.estruct.Representation.parse(format)
+        representation = stingray_reader.estruct.Representation.parse(format)
         if representation.usage in ("DISPLAY",):
             struct_code = f"{representation.picture_size}s"
         elif representation.usage in (
@@ -1109,7 +1109,7 @@ class TextUnpacker(Unpacker[NDInstance]):
         if "maxLength" in cast(dict[str, Any], schema.attributes):
             return int(cast(dict[str, Any], schema.attributes)["maxLength"])
         elif "cobol" in cast(dict[str, Any], schema.attributes):
-            representation = stingray.estruct.Representation.parse(
+            representation = stingray_reader.estruct.Representation.parse(
                 cast(dict[str, Any], schema.attributes)["cobol"]
             )
             return representation.picture_size
